@@ -20,7 +20,7 @@
 <code><a href="https://junit.org/junit5/"><img src="images/logo/Junit5.svg" width="50" height="50"  alt="JUnit 5"/></a></code>
 <code><a href="https://www.jenkins.io/"><img src="images/logo/Jenkins_logo.svg" width="50" height="50"  alt="Jenkins"/></a></code>
 <code><a href="https://gradle.org/"><img src="images/logo/Gradle.svg" width="50" height="50"  alt="Gradle"/></a></code>
-<code><a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a></code>
+<code><a href="https://rest-assured.io/"><img src="images/logo/RestAssured.svg" width="50" height="50"  alt="RestAssured"/></a></code>
 <code><a href="https://github.com/allure-framework/"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a></code>
 <code><a href="https://web.telegram.org/"><img src="images/logo/Telegram.svg" width="50" height="50"  alt="Telegram"/></a></code>
 
