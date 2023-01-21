@@ -7,8 +7,7 @@ import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static specs.Specs.requestSpec;
-import static specs.Specs.responseSpec;
+import static specs.Specs.*;
 
 
 public class ReqresInTests {
@@ -25,8 +24,7 @@ public class ReqresInTests {
                 .when()
                 .post("/users")
                 .then()
-                .statusCode(201)
-                .spec(responseSpec)
+                .spec(responseSpec201)
                 .extract().as(CreateTestModel.class);
 
         assertThat(responseModel.getName()).isEqualTo("morpheus");
@@ -45,8 +43,7 @@ public class ReqresInTests {
                 .when()
                 .put("/users/2")
                 .then()
-                .statusCode(200)
-                .spec(responseSpec)
+                .spec(responseSpec200)
                 .extract().as(UpdateTestModel.class);
 
         assertThat(responseModel.getJob()).isEqualTo("zion resident");
@@ -59,8 +56,7 @@ public class ReqresInTests {
                 .when()
                 .get("/users?page=2")
                 .then()
-                .statusCode(200)
-                .spec(responseSpec)
+                .spec(responseSpec200)
                 .extract().as(ListUsersModel.class);
 
         assertThat(responseModel.getData().get(3).getEmail()).isEqualTo("byron.fields@reqres.in");
@@ -75,8 +71,7 @@ public class ReqresInTests {
                 .when()
                 .delete("/users/2")
                 .then()
-                .statusCode(204)
-                .spec(responseSpec);
+                .spec(responseSpec204);
     }
 
     @Test
@@ -90,8 +85,7 @@ public class ReqresInTests {
                 .when()
                 .post("/login")
                 .then()
-                .statusCode(400)
-                .spec(responseSpec)
+                .spec(responseSpec400)
                 .extract().as(LoginUnsuccessfulModel.class);
 
         assertThat(responseModel.getError()).isEqualTo("Missing password");
@@ -108,8 +102,7 @@ public class ReqresInTests {
                 .when()
                 .post("/register")
                 .then()
-                .statusCode(400)
-                .spec(responseSpec)
+                .spec(responseSpec400)
                 .extract().as(RegisterUnsuccessfulModel.class);
 
         assertEquals("Missing password", responseModel.getError());
