@@ -6,5 +6,6 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class UpdateTestModel {
-    private String name, job;
+    private String name;
+    private String job;
 }

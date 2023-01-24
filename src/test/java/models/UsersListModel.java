@@ -7,6 +7,6 @@ import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ListUsersModel {
-    private List<ListUserData> data;
+public class UsersListModel {
+    private List<UserDataList> data;
 }

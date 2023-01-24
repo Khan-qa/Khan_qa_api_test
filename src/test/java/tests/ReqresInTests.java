@@ -9,7 +9,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static specs.Specs.*;
 
-
 public class ReqresInTests {
 
     @Test
@@ -52,12 +51,12 @@ public class ReqresInTests {
     @Test
     @DisplayName("Проверка пользователя в списке")
     void checkListUsers() {
-        ListUsersModel responseModel = given(requestSpec)
+        UsersListModel responseModel = given(requestSpec)
                 .when()
                 .get("/users?page=2")
                 .then()
                 .spec(responseSpec200)
-                .extract().as(ListUsersModel.class);
+                .extract().as(UsersListModel.class);
 
         assertThat(responseModel.getData().get(3).getEmail()).isEqualTo("byron.fields@reqres.in");
         assertThat(responseModel.getData().get(3).getFirstName()).isEqualTo("Byron");
